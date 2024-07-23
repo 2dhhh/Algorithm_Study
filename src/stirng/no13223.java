@@ -1,5 +1,6 @@
 package stirng;
 
+
 import java.util.Scanner;
 
 public class no13223 {
@@ -30,9 +31,6 @@ public class no13223 {
         int s = differenceSecond % 60;
 
         System.out.printf("%02d:%02d:%02d",h,m,s);
-
-
-
     }
 
 }

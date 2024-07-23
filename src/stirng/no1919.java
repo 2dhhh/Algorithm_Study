@@ -1,35 +1,38 @@
 package stirng;
 
-import java.util.Scanner;
+import java.io.*;
 
 public class no1919 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        Scanner sc = new Scanner(System.in);
-        String str1 = sc.nextLine();
-        String str2 = sc.nextLine();
-
-        // 지워야할 문자개수 카운팅
-        int sum = 0;
-
-        // 알파벳 개수를 저장할 정수 배열 선언
+        //알파벳 저장할 배열 선언
         int[] intArray = new int[26];
 
-        // str1 알파벳 배열에 저장
-        for(int i = 0; i < str1.length(); i++){
+        //최소로 지워야하는 개수 변수 선언
+        int count = 0;
+
+        //입력 값
+        String str1 = br.readLine();
+        String str2 = br.readLine();
+
+        //입력 값 배열에 저장
+        for (int i = 0; i < str1.length(); i++) {
             intArray[str1.charAt(i) - 'a']++;
         }
 
-        // str2 알파벳 배열에 저장
-        for(int i = 0; i < str2.length(); i++){
+        //동일한 문자가 존재하느지 확인
+        for (int i = 0; i < str2.length(); i++) {
             intArray[str2.charAt(i) - 'a']--;
         }
 
-        // 문자 개수 비교
-        for(int i = 0; i < 26 ; i++){
-            sum += Math.abs(intArray[i]);
+        for (int i = 0; i < 26; i++) {
+            count += Math.abs(intArray[i]);
         }
-        System.out.println(sum);
+        bw.write(String.valueOf(count));
+        bw.flush();
+        bw.close();
     }
 }
