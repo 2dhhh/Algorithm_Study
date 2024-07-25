@@ -1,18 +1,19 @@
 package big_o;
 
 
-import java.util.Scanner;
+import java.io.*;
 
 public class no1000 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        Scanner sc = new Scanner(System.in);
+        int a = Integer.parseInt(br.readLine());
+        int b = Integer.parseInt(br.readLine());
 
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-
-        System.out.println(A+B);
-
+        bw.write(String.valueOf(a + b));
+        bw.flush();
+        bw.close();
     }
 }

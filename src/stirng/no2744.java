@@ -9,7 +9,6 @@ public class no2744 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         String str = br.readLine();
-        //char[] ch = str.toCharArray();
 
         for (int i = 0; i < str.length(); i++) {
             //대문자일 경우
