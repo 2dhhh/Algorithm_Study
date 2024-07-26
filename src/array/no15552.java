@@ -5,11 +5,11 @@ import java.util.StringTokenizer;
 
 public class no15552 {
 
-    public static void main(String[] args) throws IOException {
+        public static void main(String[] args) throws IOException {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st;
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    StringTokenizer st;
 
         // 테스트 케이스 개수 T
         int t = Integer.parseInt(br.readLine());
@@ -31,4 +31,5 @@ public class no15552 {
 
 
     }
+
 }

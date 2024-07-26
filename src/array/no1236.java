@@ -1,58 +1,52 @@
 package array;
 
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class no1236 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(System.in);
-        //초기 설정
-        int n,m;
-        n = sc.nextInt();
-        m = sc.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        // 추가해야할 경비원수
-        int count = 0;
-        int max;
+        //세로 크기
+        int n = Integer.parseInt(st.nextToken());
+        //가로 크기
+        int m = Integer.parseInt(st.nextToken());
 
-        //입력 값을 저장할 변수
-        String[] bState = new String[n];
+        int row = 0;
+        int col = 0;
 
-        //입력
-        for(int i = 0; i < n; i++){
-            bState[i] = sc.next();
+        String[] str = new String[n];
+        // 배열에 대한 입력 및 행에 경비원 존재여부 파악
+        for (int i = 0; i < n; i++) {
+            str[i] = br.readLine();
+            if (!str[i].contains("X")) {
+                row++;
+            }
         }
 
-        //문제풀이 로직 -> 문자열 배열 하나씩 가져와서 문자로 전환 후 경비원 존재 여부 확인
-
-        //1.문자열 배열 꺼내오기 -> 행을 통해 카운팅
-        for(int i = 0; i < n; i++){
-            String str = bState[i];
-            if (str.contains("X")) continue;
-
-            else count++;
-        }
-        max =count;
-        count = 0;
-
-        //2.열을 통한 경비원 카운팅
-        for(int i = 0; i < m; i++){
-            int counts = 0;
-            for(int j = 0; j < n; j++){
-                if(bState[j].charAt(i) == '.'){
-                    counts++;
+        // 세로를 기준으로 카운트
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (str[j].charAt(i) == 'X') {
+                    break;
+                }
+                if(j == n-1){
+                    col++;
                 }
             }
-            if(counts == n)count++;
         }
-        if(count > max){
-            max = count;
+        if (row >= col) {
+            bw.write(String.valueOf(row));
         }
-
-        System.out.println(max);
-
-
+        else {
+            bw.write(String.valueOf(col));
+        }
+        bw.flush();
+        bw.close();
 
     }
 }

@@ -1,37 +1,39 @@
 package array;
 
-import java.util.Scanner;
-
+import java.io.*;
+import java.util.StringTokenizer;
 public class no10431 {
+    public static void main(String[] args) throws Exception {
 
-    public static void main(String[] args) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        // 입력
-        Scanner sc = new Scanner(System.in);
+        int t = Integer.parseInt(br.readLine());
 
-        int t = sc.nextInt();
-
-        while (t > 0) {
+        while(t > 0) {
             t--;
-            int tNum = sc.nextInt();
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            String n = st.nextToken();
 
             int count = 0;
             int[] arr = new int[20];
 
-            // 데이터 입력
             for (int i = 0; i < 20; i++) {
-                arr[i] = sc.nextInt();
+                arr[i] = Integer.parseInt(st.nextToken());
             }
 
-            // 문제풀이 로직
+
             for (int i = 1; i < 20; i++) {
                 for (int j = i - 1; j >= 0; j--) {
-                    if(arr[j] > arr[i]){
-                        count++;
+                    if (arr[i] < arr[j]) {
+                        count ++;
                     }
                 }
             }
-            System.out.println(tNum + " " + count);
+            bw.write(n + " " + count + "\n");
         }
+        bw.flush();
+        bw.close();
+
     }
 }
