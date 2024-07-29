@@ -47,8 +47,5 @@ public class no2309 {
         }
         bw.flush();
         bw.close();
-
-
-
     }
 }
