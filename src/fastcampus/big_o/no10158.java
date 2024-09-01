@@ -1,4 +1,4 @@
-package big_o;
+package fastcampus.big_o;
 
 import java.io.*;
 import java.util.StringTokenizer;

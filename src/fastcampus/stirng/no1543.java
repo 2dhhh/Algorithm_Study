@@ -1,4 +1,4 @@
-package stirng;
+package fastcampus.stirng;
 import java.io.*;
 
 public class no1543 {

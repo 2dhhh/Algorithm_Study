@@ -1,4 +1,4 @@
-package stirng;
+package fastcampus.stirng;
 
 
 import java.util.Scanner;

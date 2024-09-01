@@ -1,4 +1,4 @@
-package brute_force;
+package fastcampus.brute_force;
 import java.io.*;
 import java.util.StringTokenizer;
 

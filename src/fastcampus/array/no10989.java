@@ -1,4 +1,4 @@
-package array;
+package fastcampus.array;
 
 import java.io.*;
 

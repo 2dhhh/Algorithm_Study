@@ -1,16 +1,19 @@
-package brute_force;
-import java.io.*;
-import java.util.StringTokenizer;
+package fastcampus.big_o;
 
-public class no2840 {
+
+import java.io.*;
+
+public class no1000 {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st.nextToken());
-        int k = Integer.parseInt(st.nextToken());
+        int a = Integer.parseInt(br.readLine());
+        int b = Integer.parseInt(br.readLine());
 
-
+        bw.write(String.valueOf(a + b));
+        bw.flush();
+        bw.close();
     }
 }
