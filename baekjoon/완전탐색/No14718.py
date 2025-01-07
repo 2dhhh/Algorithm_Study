@@ -23,10 +23,10 @@ for i in power_list:
   for j in speed_list:
     for k in intel_list:
       for l in range(N):
-        if(tmp_list[l][0] <= i and tmp_list[l][1] <= j and tmp_list[l][2] <= k):
+        if tmp_list[l][0] <= i and tmp_list[l][1] <= j and tmp_list[l][2] <= k:
           cnt += 1
 
-      if cnt == K:
+      if cnt >= K:
         min_stat = min(min_stat, i+j+k)
 
 
