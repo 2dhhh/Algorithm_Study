@@ -22,12 +22,8 @@ for i in range(1, n+1):
     cnt += 1
 
   diff = A_prefix_sum[i] - B_prefix_sum[i]
-  cnt += dict.get(diff, 0)
+  cnt += dict[diff]
 
-  if diff in dict:
-    dict[diff] += 1
-
-  else:
-    dict[diff] = 1
+  dict[diff] += 1
 
 print(cnt)
