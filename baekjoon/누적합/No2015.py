@@ -8,7 +8,7 @@ ls = list(map(int, input().split()))
 
 prefix_dict = {0: 1}
 
-# 누적 합
+# 누적합
 prefix_sum = 0
 
 ans = 0
