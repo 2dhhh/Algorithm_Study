@@ -12,17 +12,17 @@
         - 어떤 역할의 리스트인지 명시할 것
 
         ```python
-        """ 창고다각형 예시 """
-        prefix_max = [] # 1 ~ i 번째 위치 중 최대 높이
-        suffix_max = [] # i ~ n 번째 위치 중 최대 높이
-        
-        # prefix는 왼쪽
-        # suffix는 오른쪽 
-        """
-        [주의점]
-        suffix를 구할 때 배열 인덱스 크기 설정 주의 
-        그냥 누적 합과 동일하게 설정하면 인덱스 범위 예외 터트림
-        """
+      """ 창고다각형 예시 """
+      prefix_max = [] # 1 ~ i 번째 위치 중 최대 높이
+      suffix_max = [] # i ~ n 번째 위치 중 최대 높이
+      
+      # prefix는 왼쪽
+      # suffix는 오른쪽 
+      """
+      [주의점]
+      suffix를 구할 때 배열 인덱스 크기 설정 주의 
+      그냥 누적 합과 동일하게 설정하면 인덱스 범위 예외 터트림
+      """
         ```
 
 - 배열(수열)의 1번 위치부터 값을 저장하고 누적 합을 구함
@@ -30,35 +30,35 @@
     - 배열에 필요없는 0과 같은 수 집어넣기
         - 기본적인 누적합 구하는 방법 → 일차원 누적합
 
-            ```python
-            """기본적인 누적합 구하는 방법"""
-            import sys 
-            
-            input = sys.stdin.readline
-            
-            n, m = map(int, input().split())
-            
-            ls = [0] + list(map(int, input().split()))
-            
-            prefix_sum = [0] * (n+1)
-            
-            for i in range(1, n+1):
-            	prefix_sum[i] = prefix_sum[i-1] + ls[i]
-            
-            for _ in range(m):
-            	a, b = map(int, input().split())
-            	print(prefix_sum[b] - prefix_sum[a-1]
-            	
-            	
-            """
-            arr      0 5 4 3 2 1
-            
-            prefix_sum    0 5 9 12 14 15
-            
-            prefix_sum[i] := 1번부터 i 번째 수까지 합
-            """
-            
-            ```
+```python
+"""기본적인 누적합 구하는 방법"""
+import sys 
+
+input = sys.stdin.readline
+
+n, m = map(int, input().split())
+
+ls = [0] + list(map(int, input().split()))
+
+prefix_sum = [0] * (n+1)
+
+for i in range(1, n+1):
+	prefix_sum[i] = prefix_sum[i-1] + ls[i]
+
+for _ in range(m):
+	a, b = map(int, input().split())
+print(prefix_sum[b] - prefix_sum[a-1])
+ 	
+ 	
+"""
+ arr      0 5 4 3 2 1
+ 
+ prefix_sum    0 5 9 12 14 15
+ 
+ prefix_sum[i] := 1번부터 i 번째 수까지 합
+"""
+ 
+ ```
 
 - 누적 합을 사용하는 이유 : 구간 get 쿼리를 점 get 으로 전환할 수 있다
 - i번째 ~ j번째 구간의 합 : prefix_sum[j] - prefix_sum[i-1]
@@ -73,27 +73,27 @@
 
         - 이차원 누적 합 및 구간 합 예제
 
-            ```python
-            
-            """ 구간 합 구하기 5 """
-            import sys
-            
-            input = sys.stdin.readline
-            
-            n, m = map(int, input().split())
-            
-            ls = [list(map(int, input().split())) for _ in range(n)]
-            prefix_2d_sum = [[0]*(n+1) for _ in range(n+1)]
-            
-            for i in range(1, n+1):
-              for j in range(1,n+1):
-                prefix_2d_sum[i][j] = prefix_2d_sum[i-1][j] + prefix_2d_sum[i][j-1] - prefix_2d_sum[i-1][j-1] + ls[i-1][j-1]
-            
-            for _ in range(m):
-              x1, y1, x2, y2 = map(int, input().split())
-              print(prefix_2d_sum[x2][y2] - prefix_2d_sum[x1-1][y2] - prefix_2d_sum[x2][y1-1] + prefix_2d_sum[x1-1][y1-1])
-            
-            ```
+```python
+
+""" 구간 합 구하기 5 """
+import sys
+
+input = sys.stdin.readline
+
+n, m = map(int, input().split())
+
+ls = [list(map(int, input().split())) for _ in range(n)]
+prefix_2d_sum = [[0]*(n+1) for _ in range(n+1)]
+
+for i in range(1, n+1):
+  for j in range(1,n+1):
+    prefix_2d_sum[i][j] = prefix_2d_sum[i-1][j] + prefix_2d_sum[i][j-1] - prefix_2d_sum[i-1][j-1] + ls[i-1][j-1]
+
+for _ in range(m):
+  x1, y1, x2, y2 = map(int, input().split())
+  print(prefix_2d_sum[x2][y2] - prefix_2d_sum[x1-1][y2] - prefix_2d_sum[x2][y1-1] + prefix_2d_sum[x1-1][y1-1])
+
+```
 
 
 ### 쿼리 란?
