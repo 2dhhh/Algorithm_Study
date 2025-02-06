@@ -6,7 +6,6 @@ n, k = map(int, input().split())
 ls = list(map(int, input().split()))
 
 l = 0
-r = -1
 odd_cnt = 0
 ans = 0
 
