@@ -38,3 +38,27 @@ for num in ls_m:
     print(0, end =" ")
   else :
     print(r-l+1, end = " ")
+
+# import sys
+# from collections import defaultdict
+# input = sys.stdin.readline
+#
+# n = int(input())
+# ls_n = list(map(int, input().split()))
+#
+# m = int(input())
+# ls_m = list(map(int, input().split()))
+#
+# dd = defaultdict(int)
+#
+# for num in ls_n:
+#   dd[num] += 1
+#
+# ls_cnt = [0] * m
+# for i in range(m):
+#   num = ls_m[i]
+#   ls_cnt[i] = dd[num]
+#
+# print(*ls_cnt)
+
+
