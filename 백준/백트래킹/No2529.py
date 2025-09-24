@@ -1,3 +1,7 @@
+import sys
+
+input = sys.stdin.readline
+
 def check(a, b, operand):
   if operand == '<':
     if a > b:
